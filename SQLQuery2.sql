@@ -30,3 +30,22 @@ Select Salary,Name from employee_payroll where StartDate between ('21/08/2021') 
 ALTER TABLE employee_payroll ADD Gender varchar(6);
 UPDATE employee_payroll set Gender = 'M' where  Name='Vaibhav' or Name = 'Ankush' or Name='Harish' or Name='Bhanu' or Name='Satish'
 UPDATE employee_payroll set Gender = 'F' where  Name='Riya' or Name = 'Priya'
+
+/* UC7 use of Database functions with GroupBy */
+Alter Table employee_payroll
+Alter Column Salary float
+
+Select SUM(Salary) From employee_payroll Where Gender='M' Group by Gender
+Select SUM(Salary) From employee_payroll Where Gender='F' Group by Gender
+
+Select AVG(Salary) From employee_payroll Where Gender='M' Group by Gender
+Select AVG(Salary) From employee_payroll Where Gender='F' Group by Gender
+
+Select MIN(Salary) From employee_payroll Where Gender='M' Group by Gender
+Select MIN(Salary) From employee_payroll Where Gender='F' Group by Gender
+
+Select MAX(Salary) From employee_payroll Where Gender='M' Group by Gender
+Select MAX(Salary) From employee_payroll Where Gender='F' Group by Gender
+
+Select COUNT(Salary) From employee_payroll Where Gender='M' Group by Gender
+Select COUNT(Salary) From employee_payroll Where Gender='F' Group by Gender

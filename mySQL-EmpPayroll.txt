@@ -3,3 +3,31 @@ create database Payroll_service
 
 use Payroll_service
 
+/* UC2 create a employee payroll table in the payroll service database*/
+create table Employee_payroll(
+Id int identity(1,1) primary key,
+Name varchar(20),
+Salary varchar(10),
+StartDate varchar(20)
+)
+/* UC3 create employee payroll data */
+insert into employee_payroll(Name, Salary, StartDate) values ('Vaibhav','40000','16/08/2021')
+insert into employee_payroll(Name, Salary, StartDate) values ('Ankush','50000','21/08/2021')
+insert into employee_payroll(Name, Salary, StartDate) values ('Satish','60000','17/08/2021')
+insert into employee_payroll(Name, Salary, StartDate) values ('Riya','35000','21/08/2021')
+insert into employee_payroll(Name, Salary, StartDate) values ('Priya','25000','16/08/2021')
+insert into employee_payroll(Name, Salary, StartDate) values ('Bhanu','35000','24/08/2021')
+insert into employee_payroll(Name, Salary, StartDate) values ('Harish','25000','29/08/2021')
+
+/* UC4 retrieve all the employee payroll data */
+select * from employee_payroll
+
+/*UC5 retrieve salary data on a condition */
+SELECT Salary,Name FROM employee_payroll WHERE Name = 'Riya'
+Select Salary,Name from employee_payroll where StartDate between ('21/08/2021') and ('21/08/2021')
+
+/* UC6 add Gender to Employee Payroll Table and Update the Rows */
+ALTER TABLE employee_payroll ADD Gender varchar(6);
+UPDATE employee_payroll set Gender = 'M' where  Name='Vaibhav' or Name = 'Ankush' or Name='Harish' or Name='Bhanu' or Name='Satish'
+UPDATE employee_payroll set Gender = 'F' where  Name='Riya' or Name = 'Priya'
+
