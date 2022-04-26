@@ -31,6 +31,7 @@ ALTER TABLE employee_payroll ADD Gender varchar(6);
 UPDATE employee_payroll set Gender = 'M' where  Name='Vaibhav' or Name = 'Ankush' or Name='Harish' or Name='Bhanu' or Name='Satish'
 UPDATE employee_payroll set Gender = 'F' where  Name='Riya' or Name = 'Priya'
 
+
 /* UC8 extend employee_payroll data and save more details */
 ALTER TABLE employee_payroll ADD Phone varchar(16), Address varchar(32) DEFAULT 'Empty' WITH VALUES, Department varchar(16) NOT NULL DEFAULT 'Developer';
 select * from employee_payroll
